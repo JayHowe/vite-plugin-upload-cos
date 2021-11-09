@@ -28,8 +28,6 @@ const COS = require('cos-nodejs-sdk-v5');
     name: 'vite-plugin-upload-cos',
     async writeBundle(_option, bundles) {
       const uploadfiles = Object.keys(bundles).filter((item) => !excludes.includes(item));
-      console.log('!!bundles', uploadfiles);
-
       function upload2CosPromise({ url }) {
         return new Promise((resolve) => {
           cosObject.putObject(
