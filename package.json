@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-upload-cos",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "vite-plugin-upload-cos upload assets to tencent cos server",
   "main": "index.js",
   "scripts": {

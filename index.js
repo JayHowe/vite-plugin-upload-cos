@@ -1,4 +1,5 @@
 const COS = require('cos-nodejs-sdk-v5');
+
 /**
  * vite-plugin-upload-cos 静态资源上传cos rollup插件
  * @SecretId String 腾讯云cos SecretId
@@ -11,7 +12,7 @@ const COS = require('cos-nodejs-sdk-v5');
  * 
  * @returns 
  */
- export default function upload2Cos({
+function upload2Cos({
   SecretId,
   SecretKey,
   bucket,
@@ -69,3 +70,5 @@ const COS = require('cos-nodejs-sdk-v5');
     },
   };
 }
+
+module.exports = upload2Cos;
