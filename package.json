@@ -1,0 +1,26 @@
+{
+  "name": "rollup-plugin-upload-cos",
+  "version": "1.0.0",
+  "description": "rollup-plugin-upload-cos upload assets to tencent cos server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayHowe/rollup-plugin-upload-cos.git"
+  },
+  "keywords": [
+    "rollup-plugin-upload-cos",
+    "cos",
+    "rollup-plugin",
+    "plugin",
+    "upload-cos"
+  ],
+  "author": "jayhowe2014@163.com",
+  "license": " MIT License",
+  "bugs": {
+    "url": "https://github.com/JayHowe/rollup-plugin-upload-cos/issues"
+  },
+  "homepage": "https://github.com/JayHowe/rollup-plugin-upload-cos#readme"
+}
