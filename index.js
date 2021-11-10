@@ -1,4 +1,5 @@
 const COS = require('cos-nodejs-sdk-v5');
+const fs = require('fs');
 
 /**
  * vite-plugin-upload-cos 静态资源上传cos rollup插件
