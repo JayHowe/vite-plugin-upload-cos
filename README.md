@@ -22,6 +22,7 @@ export default {
         SecretKey: 'xxx', /* 上传cos的 SecretKey */
         uploadDir: 'dist', /* 可选项，不填则默认上传dist文件夹里面的全部文件到cos */
         excludes: [
+          /\.map$/,/**忽略map文件 */
           'index.html', /* 可选项，忽略上传到cos的文件， 不填则默认上传指定文件夹的全部文件 */
         ]
     })],
