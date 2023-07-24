@@ -33,7 +33,7 @@ function upload2Cos({
         for (let i = 0; i < excludes.length; ++i) {
           const matcher = excludes[i];
           if ((matcher instanceof RegExp && matcher.test(item)) || matcher === item) {
-            console.log(false, item);
+            // console.log(false, item);
             return false;
           }
         }
