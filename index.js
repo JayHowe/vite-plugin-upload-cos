@@ -29,7 +29,16 @@ function upload2Cos({
   return {
     name: 'vite-plugin-upload-cos',
     async writeBundle(_option, bundles) {
-      const uploadfiles = Object.keys(bundles).filter((item) => !excludes.includes(item));
+      const uploadfiles = Object.keys(bundles).filter((item) => {
+        for (let i = 0; i < excludes.length; ++i) {
+          const matcher = excludes[i];
+          if ((matcher instanceof RegExp && matcher.test(item)) || matcher === item) {
+            // console.log(false, item);
+            return false;
+          }
+        }
+        return true
+      });
       function upload2CosPromise({ url }) {
         return new Promise((resolve) => {
           cosObject.putObject(
@@ -39,8 +48,8 @@ function upload2Cos({
               Key: `${cosBaseDir}/${url}`,
               StorageClass: 'STANDARD',
               Body: fs.createReadStream(`./${uploadDir}/${url}`),
-              onProgress: function() {
-                  console.log(`\x1B[36m[vite-plugin-upload-cos]Uploading ${url}\x1B[0m`)
+              onProgress: function () {
+                console.log(`\x1B[36m[vite-plugin-upload-cos]Uploading ${url}\x1B[0m`)
               }
             },
             function (err) {
